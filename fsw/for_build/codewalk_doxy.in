@@ -1,15 +1,15 @@
 # Doxyfile 1.5.4
 @INCLUDE_PATH=../docs/dox_src/mnem_maps \
-              $(CFS_APP_SRC)/$(APPTARGET)/docs/dox_src/mnem_maps
-@INCLUDE=cfs_$(APPTARGET)_cmd_mnem_map
-@INCLUDE=cfs_$(APPTARGET)_tlm_mnem_map
+              $(CFS_APP_SRC)/@APPTARGET@/docs/dox_src/mnem_maps
+@INCLUDE=cfs_@APPTARGET@_cmd_mnem_map
+@INCLUDE=cfs_@APPTARGET@_tlm_mnem_map
 #---------------------------------------------------------------------------
 # Project related configuration options
 #---------------------------------------------------------------------------
 #DOXYFILE_ENCODING      = UTF-8
 PROJECT_NAME           = "Code Walkthrough of CFS Data Storage (DS) Application"
 PROJECT_NUMBER         = "$(CURR_DATE)"
-OUTPUT_DIRECTORY       = $(CFS_APP_SRC)/$(APPTARGET)/docs/cwt/html
+OUTPUT_DIRECTORY       = docs/cwt/html/@APPTARGET@
 CREATE_SUBDIRS         = NO
 OUTPUT_LANGUAGE        = English
 BRIEF_MEMBER_DESC      = YES
@@ -92,11 +92,11 @@ WARN_LOGFILE           =
 #---------------------------------------------------------------------------
 # configuration options related to the input files
 #---------------------------------------------------------------------------
-INPUT                  = $(CFS_APP_SRC)/$(APPTARGET)/docs/dox_src/detailed_design/cfs_$(APPTARGET).dox
-#INPUT                 += $(CFS_APP_SRC)/$(APPTARGET)/fsw/public_inc 
-INPUT                 += $(CFS_APP_SRC)/$(APPTARGET)/fsw/src 
-INPUT                 += $(CFS_APP_SRC)/$(APPTARGET)/fsw/mission_inc 
-INPUT                 += $(CFS_APP_SRC)/$(APPTARGET)/fsw/platform_inc 
+INPUT                  = $(CFS_APP_SRC)/@APPTARGET@/docs/dox_src/detailed_design/cfs_@APPTARGET@.dox
+#INPUT                 += $(CFS_APP_SRC)/@APPTARGET@/fsw/public_inc 
+INPUT                 += $(CFS_APP_SRC)/@APPTARGET@/fsw/src 
+INPUT                 += $(CFS_APP_SRC)/@APPTARGET@/fsw/mission_inc 
+INPUT                 += $(CFS_APP_SRC)/@APPTARGET@/fsw/platform_inc 
 #INPUT_ENCODING         = UTF-8
 FILE_PATTERNS          = *.c \
                          *.h
@@ -109,7 +109,7 @@ EXAMPLE_PATH           =
 EXAMPLE_PATTERNS       = *
 EXAMPLE_RECURSIVE      = NO
 IMAGE_PATH             = "./"
-IMAGE_PATH            += "$(CFS_APP_SRC)/$(APPTARGET)/docs/dox_src/detailed_design/"
+IMAGE_PATH            += "$(CFS_APP_SRC)/@APPTARGET@/docs/dox_src/detailed_design/"
 INPUT_FILTER           = 
 FILTER_PATTERNS        = 
 FILTER_SOURCE_FILES    = NO
@@ -154,8 +154,8 @@ TREEVIEW_WIDTH         = 250
 #---------------------------------------------------------------------------
 # configuration options related to the LaTeX output
 #---------------------------------------------------------------------------
-GENERATE_LATEX         = NO
-LATEX_OUTPUT           = ../../latex
+GENERATE_LATEX         = YES
+LATEX_OUTPUT           = ../../latex/@APPTARGET@
 LATEX_CMD_NAME         = latex
 MAKEINDEX_CMD_NAME     = makeindex
 COMPACT_LATEX          = YES
@@ -221,7 +221,7 @@ SKIP_FUNCTION_MACROS   = YES
 # Configuration::additions related to external references   
 #---------------------------------------------------------------------------
 TAGFILES               = ../cfe/cfe.tag=../cfe
-GENERATE_TAGFILE       = $(APPTARGET).tag
+GENERATE_TAGFILE       = @APPTARGET@.tag
 ALLEXTERNALS           = NO
 EXTERNAL_GROUPS        = YES
 PERL_PATH              = /usr/bin/perl

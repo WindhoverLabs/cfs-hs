@@ -2,7 +2,7 @@
 ** File:
 **   $Id: hs_app.c 1.19 2015/03/03 12:16:03EST sstrege Exp  $
 **
-**   Copyright © 2007-2014 United States Government as represented by the 
+**   Copyright ï¿½ 2007-2014 United States Government as represented by the 
 **   Administrator of the National Aeronautics and Space Administration. 
 **   All Other Rights Reserved.  
 **
