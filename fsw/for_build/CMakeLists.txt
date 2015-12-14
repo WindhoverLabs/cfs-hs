@@ -18,6 +18,8 @@ include_directories(${PSP_INC_DIRS})
 # Build application
 add_library(${APP_FILE} SHARED ${APP_SRC} ${APP_CUSTOM_SRC})
 
+add_subdirectory(../unit_test unit_test)
+
 # Build tables
 add_library(hs_amt_tbl STATIC ${TABLE_DIR}/hs_amt_tbl.c)
 add_library(hs_emt_tbl STATIC ${TABLE_DIR}/hs_emt_tbl.c)
