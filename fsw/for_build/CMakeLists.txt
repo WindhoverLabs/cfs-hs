@@ -16,15 +16,15 @@ include_directories(${OSAL_INC_DIRS})
 include_directories(${PSP_INC_DIRS})
 	
 # Build application
-add_library(${APP_FILE} SHARED ${APP_SRC} ${APP_CUSTOM_SRC})
+add_app(${APP_FILE} SHARED ${APP_SRC} ${APP_CUSTOM_SRC})
 
 add_subdirectory(../unit_test unit_test)
 
 # Build tables
-add_library(hs_amt_tbl STATIC ${TABLE_DIR}/hs_amt_tbl.c)
-add_library(hs_emt_tbl STATIC ${TABLE_DIR}/hs_emt_tbl.c)
-add_library(hs_mat_tbl STATIC ${TABLE_DIR}/hs_mat_tbl.c)
-add_library(hs_xct_tbl STATIC ${TABLE_DIR}/hs_xct_tbl.c)
+add_app(hs_amt_tbl STATIC ${TABLE_DIR}/hs_amt_tbl.c)
+add_app(hs_emt_tbl STATIC ${TABLE_DIR}/hs_emt_tbl.c)
+add_app(hs_mat_tbl STATIC ${TABLE_DIR}/hs_mat_tbl.c)
+add_app(hs_xct_tbl STATIC ${TABLE_DIR}/hs_xct_tbl.c)
 set_target_properties(hs_amt_tbl PROPERTIES PREFIX "" SUFFIX ".tbl")
 set_target_properties(hs_emt_tbl PROPERTIES PREFIX "" SUFFIX ".tbl")
 set_target_properties(hs_mat_tbl PROPERTIES PREFIX "" SUFFIX ".tbl")
